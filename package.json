@@ -1,0 +1,36 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "tech blog",
+  "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express-handlebars": "^5.3.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.2",
+    "path": "^0.12.7",
+    "sequelize": "^6.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyoung0613/tech-blog.git"
+  },
+  "keywords": [
+    "Tech",
+    "blog"
+  ],
+  "author": "jyoung0613",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jyoung0613/tech-blog/issues"
+  },
+  "homepage": "https://github.com/jyoung0613/tech-blog#readme"
+}

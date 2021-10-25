@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="The Tech Blog">
+        <meta name="keywords" content="Tech, Blog">
+        <meta name="author" content="John Young">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?&family=Poppins:wght@200;300;400;500&family=Oswald:wght@300;500&display=swap" >
+        <link rel="stylesheet" href="../../public/css/style.css">
+        <title>Tech Blog</title>
+        <link rel="shortcut icon" type="image/png" href="../../public/images/favicon.png" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top px-3 techblog-nav">
+                <a class="navbar-brand" href="/">THE TECH BLOG</a>
+                <button class="navbar-toggler custom-toggler" id="hamburger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <ul class="collapse navbar-collapse list-unstyled justify-content-end pt-3" id="navbarSupportedContent">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                        <!-- conditionally render login or logout links -->
+                        {{#if logged_in}}
+                        <li class="nav-item"><a class="nav-link" id="btn-signout" href="/" rel="noreferrer noopener">Sign Out</a></li>
+                        {{else}}
+                        <li class="nav-item"><a class="nav-link" id="btn-signin" href="/signin" rel="noreferrer noopener">Sign In</a></li>
+                        <li class="nav-item"><a class="nav-link" id="btn-signup" href="/signup" rel="noreferrer noopener">Sign Up</a></li>
+                        {{/if}}
+                    </ul>
+                    </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <!-- render the sub layout -->
+                {{{ body }}}
+            </div>
+        </main>
+
+        <footer class="footer bg-dark">
+            <section id="cmb-contact" class="text-center py-2 align-items-center">
+                <h4>Contact</h4>
+                <a class="cmb-fa px-4" href="https://www.linkedin.com/in/john-young-bb47a146/" target="_blank" rel="noreferrer noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="cmb-fa px-4" href="https://github.com/jyoung0613/tech-blog" target="_blank" rel="noreferrer noopener">
+                    <i class="fab fa-github cmb-fa"></i>
+                </a>
+                <a class="cmb-fa px-4" href="mailto:jwyoung0613@gmail.com?subject=Contact from Tech Blog Site" target="_blank" rel="noreferrer noopener">
+                    <i class="fas fa-envelope cmb-fa"></i>
+                </a>
+            </section>
+        </footer>
+
+        {{!-- render script for signed in users only --}}
+        {{#if logged_in}}
+        <script src="/public/js/signout.js"></script>
+        {{/if}}
+
+        <!-- scripts for bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        {{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

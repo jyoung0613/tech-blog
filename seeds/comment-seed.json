@@ -1,31 +1,31 @@
 [
     {
-    "content": "Test Comment 1",
+    "content": "Test Comment A",
     "user_id": 1,
     "article_id": 1
     },
     {
-    "content": "Test Comment 2",
+    "content": "Test Comment B",
     "user_id": 1,
     "article_id": 2
     },
     {
-    "content": "Test Comment 3",
+    "content": "Test Comment C",
     "user_id": 2,
     "article_id": 3
     },
     {
-    "content": "Test Comment 4",
+    "content": "Test Comment D",
     "user_id": 2,
     "article_id": 4
     },
     {
-    "content": "Test Comment 5",
+    "content": "Test Comment E",
     "user_id": 3,
     "article_id": 5
     },
     {
-    "content": "Test Comment 6",
+    "content": "Test Comment F",
     "user_id": 3,
     "article_id": 6
     }

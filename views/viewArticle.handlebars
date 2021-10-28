@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+    <section class="article-view">
+        <div class="col-12">
+            <div class="card-deck">
+                <div class="card view-card my-4" data-id="{{articleSingle.id}}">
+                    <div class="card-header text-light bg-dark">
+                        <h3>{{articleSingle.title}}</h3>
+                        <small class="text-right">Posted by {{articleSingle.user.username}} on {{format_date articleSingle.created_at}}</small>
+                    </div>
+                    <div class="card-body" id="content">{{articleSingle.content}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="comments col-12">
+
+        {{#if logged_in}}
+        <section class="comment-new col-12">
+            <form class="newCommentForm">
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="newCommentContent" rows="3" placeholder="Write a comment to join the discussion!"></textarea>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary submit" id="btn-comment" data-id="{{articleSingle.id}}" type="submit">Submit Comment</button>
+                    <button class="btn btn-warning submit" id="btn-cancel" type="reset">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        {{else}}
+        <p>To post a comment or an article of your own, <a href="/signin" rel="noreferrer noopener"><span><strong>Sign In</strong></span></a> or <a href="/signup" rel="noreferrer noopener"><span><strong>Sign Up</strong></span></a>.</p>
+        {{/if}}
+
+        <div class="container-fluid">
+
+            {{#if articleSingle.Comments.length}}
+            {{#each articleSingle.Comments as |comment|}}
+            <section class="comments-view">
+                <div class="col-12">
+                    <div class="my-3" data-id="{{comment.id}}">
+                        <p class="comment" id="content">{{comment.content}}<br>
+                        <small class="align-text-right">- Posted by {{comment.user.username}} on {{format_date comment.created_at}}</small>
+                        <div class="edit-btns-comments">
+                            <small class="btn btn-update" data-id="{{comment.id}}">update</small> |
+                            <small class="btn btn-delete" data-id="{{comment.id}}">delete</small>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            {{/each}}
+            {{/if}}
+        </div>
+    </div>
+
+</div>
+
+
+<script src="../public/js/viewArticle.js"></script>

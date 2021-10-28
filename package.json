@@ -1,7 +1,7 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "tech blog",
+  "description": "Tech Blogt",
   "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -17,7 +17,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
   },
   "keywords": [
     "Tech",
-    "blog"
+    "Blog"
   ],
   "author": "jyoung0613",
   "license": "MIT",

@@ -12,7 +12,7 @@ const newArticleFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -21,11 +21,16 @@ const newArticleFormHandler = async (event) => {
 
 const cancelButtonHandler = async () => {
   document.location.replace('/dashboard');
-};
+}
 
 document
   .querySelector('.newArticleForm')
   .addEventListener('submit', newArticleFormHandler);
+
 document
+  .querySelector('#btn-cancel')
+  .addEventListener('reset', cancelButtonHandler);
+
+  document
   .querySelector('.newArticleForm')
   .addEventListener('reset', cancelButtonHandler);

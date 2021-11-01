@@ -12,14 +12,15 @@ const newArticleFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
 };
 
-const cancelButtonHandler = async () => {
+const cancelButtonHandler = async (event) => {
+  event.preventDefault();
   document.location.replace('/dashboard');
 }
 
@@ -27,9 +28,9 @@ document
   .querySelector('.newArticleForm')
   .addEventListener('submit', newArticleFormHandler);
 
-document
-  .querySelector('#btn-cancel')
-  .addEventListener('reset', cancelButtonHandler);
+//document
+//  .querySelector('#btn-cancel')
+//  .addEventListener('reset', cancelButtonHandler);
 
   document
   .querySelector('.newArticleForm')

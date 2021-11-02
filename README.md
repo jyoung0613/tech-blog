@@ -52,7 +52,7 @@ From the modern browser of your choice, visit:
 
 ## Deployed App
 
-[This Tech Blog app has been deployed on Heroku and is available here.](https:)
+[This Tech Blog app has been deployed on Heroku and is available here.](https://sleepy-basin-21214.herokuapp.com/)
 
 ## To Demo 
 
